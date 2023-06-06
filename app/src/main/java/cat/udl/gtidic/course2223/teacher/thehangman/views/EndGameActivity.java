@@ -35,7 +35,6 @@ public class EndGameActivity extends AppCompatActivity {
     }
     private void checkGameOver(){
 
-        // variable actualment sense us..
         boolean playerWinner = false;
 
         GameViewModel gameViewModel = null;
@@ -49,6 +48,8 @@ public class EndGameActivity extends AppCompatActivity {
             finish();
         }
     }
+
+
         private void home() {
             Intent i = new Intent (this, InitActivity.class);
             startActivity(i);
