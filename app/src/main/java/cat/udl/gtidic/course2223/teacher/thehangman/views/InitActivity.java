@@ -47,6 +47,8 @@ public class InitActivity extends AppCompatActivity {
      * Deslogueja l'usuari de Firebase
      */
     private void logout() {
-        Toast.makeText(this, R.string.notDeveloped, Toast.LENGTH_SHORT ).show();
+        //Toast.makeText(this, R.string.notDeveloped, Toast.LENGTH_SHORT ).show();
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
     }
 }
