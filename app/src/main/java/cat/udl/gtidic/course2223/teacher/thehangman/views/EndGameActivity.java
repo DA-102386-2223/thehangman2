@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -17,7 +18,6 @@ public class EndGameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_end_game);
 
         TextView tv = findViewById(R.id.tvEndGame);
-        Button btn = findViewById(R.id.btnCloseActivity);
         Intent i = getIntent();
         gameWin = i.getBooleanExtra("gameWin", false);
 
@@ -27,8 +27,11 @@ public class EndGameActivity extends AppCompatActivity {
             tv.setText("Has perdut!");
         }
 
-        btn.setOnClickListener(v -> {
+        Handler handler = new Handler();
+        handler.postDelayed(() -> {
+            Intent intent = new Intent(EndGameActivity.this, InitActivity.class);
+            startActivity(intent);
             finish();
-        });
+        }, 5000);
     }
 }
