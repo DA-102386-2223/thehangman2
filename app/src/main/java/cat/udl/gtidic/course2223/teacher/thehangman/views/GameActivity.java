@@ -129,13 +129,13 @@ public class GameActivity extends AppCompatActivity {
         refreshLettersChosen();
         refreshHangmanImages();
         hideKeyboard();
-        checkGameOver();
+        //checkGameOver();
     }
 
     /**
      * Revisa si el joc ha acabat i informa via Log (de moment)
      */
-    private void checkGameOver(){
+    /*private void checkGameOver(){
 
         // variable actualment sense us..
         boolean playerWinner = false;
@@ -151,7 +151,7 @@ public class GameActivity extends AppCompatActivity {
             etNewLetter.setEnabled(false);
             finish();
         }
-    }
+    }*/
 
     /**
      * Inicia el joc i actualitza l'activitat
