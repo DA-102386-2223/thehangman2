@@ -32,7 +32,7 @@ public class Game {
 
 //    atributs que no mostra el game però que si que actualitza
 //    estan pensants per poder ésser persists fàcilment
-    Boolean playerWon;
+    public Boolean playerWon;
     String lettersChosenStr;
 
     /**
