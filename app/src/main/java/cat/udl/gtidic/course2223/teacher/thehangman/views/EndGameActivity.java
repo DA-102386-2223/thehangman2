@@ -18,7 +18,7 @@ public class EndGameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_end_game);
 
         Button btnRestart = findViewById(R.id.return_init);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageView endGameImage = findViewById(R.id.end_game_image);
+        ImageView endGameImage = findViewById(R.id.end_game_image);
 
         Bundle extras = getIntent().getExtras();
         boolean playerWinner = extras.getBoolean("playerWinner");

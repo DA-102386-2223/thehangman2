@@ -138,28 +138,25 @@ public class GameActivity extends AppCompatActivity {
      */
     private void checkGameOver(){
 
-        // variable actualment sense us..
-        boolean playerWinner = false;
-
         if (gameViewModel.getGame().isPlayerTheWinner()){
             Log.d(Game.TAG, "El jugador ha guanyat!");
             Intent intent = new Intent(this, EndGameActivity.class);
-            intent.putExtra(String.valueOf(playerWinner), true);
+            intent.putExtra("playerWinner", true);
             startActivity(intent);
             finish();
 
-        }
-
-        if (gameViewModel.getGame().isGameOver()){
+        } else if (gameViewModel.getGame().isGameOver()) {
             Log.d(Game.TAG, "El Joc ha acabat");
             btnNewLetter.setEnabled(false);
             etNewLetter.setEnabled(false);
             Intent intent = new Intent(this, EndGameActivity.class);
-            intent.putExtra(String.valueOf(playerWinner), false);
+            intent.putExtra("playerWinner", false);
             startActivity(intent);
             finish();
+
         }
     }
+
 
     /**
      * Inicia el joc i actualitza l'activitat
