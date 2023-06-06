@@ -56,6 +56,8 @@ public class GameActivity extends AppCompatActivity {
         updateUserName();
 
         setInputLetterAlwaysUppercase();
+        gameViewModel.getLettersChosenLD().observe(this, this::refreshLettersChosen);
+
     }
 
     @Override
@@ -98,8 +100,9 @@ public class GameActivity extends AppCompatActivity {
     /**
      * Actualitza les letters chosen pel player
      */
-    private void refreshLettersChosen(){
-        lettersChosen.setText(gameViewModel.getGame().lettersChosen());
+
+        private void refreshLettersChosen(String s){
+            lettersChosen.setText(s);
     }
 
     /**
@@ -128,7 +131,7 @@ public class GameActivity extends AppCompatActivity {
         }
         Log.d(Game.TAG, "Estat actual: " + gameViewModel.getGame().getCurrentRound());
 
-        refreshLettersChosen();
+        refreshLettersChosen("");
         refreshHangmanImages();
         hideKeyboard();
         checkGameOver();
@@ -163,7 +166,7 @@ public class GameActivity extends AppCompatActivity {
      */
     private void startGame(){
         gameViewModel.startGame();
-        refreshLettersChosen();
+        refreshLettersChosen("");
         refreshHangmanImages();
     }
 
