@@ -10,13 +10,14 @@ import cat.udl.gtidic.course2223.teacher.thehangman.R;
 
 public class HowToPlayActivity extends AppCompatActivity {
 
-    TextView textView = findViewById(R.id.tvDescription);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_how_to_play);
 //        nothing interesting here
+        TextView textView = findViewById(R.id.tvDescription);
 
         textView.setMovementMethod(new ScrollingMovementMethod());
     }
