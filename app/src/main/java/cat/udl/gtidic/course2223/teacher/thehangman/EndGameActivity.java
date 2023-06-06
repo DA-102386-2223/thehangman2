@@ -18,14 +18,18 @@ public class EndGameActivity extends AppCompatActivity {
         PlayerWinner = i.getBooleanExtra("isPlayerWinner", false);
 
         TextView tv = findViewById(R.id.endGameTextView);
-        Button btn = findViewById(R.id.endGameButton);
+
 
         if (PlayerWinner) tv.setText("Has guanyat!");
         else tv.setText("Has perdut!");
 
-        btn.setOnClickListener(v -> {
-            finish();
-        });
 
+        new CountDownTimer(5000, 1000) {
+            public void onFinish() {
+                finish();
+            }
+            public void onTick(long millisUntilFinished) {
+            }
+        }.start();
     }
 }
