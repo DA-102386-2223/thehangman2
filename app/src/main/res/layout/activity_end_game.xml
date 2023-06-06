@@ -10,21 +10,24 @@
         android:id="@+id/end_game_image"
         android:layout_width="348dp"
         android:layout_height="367dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.206"
-        app:srcCompat="@drawable/youwin"
-        android:scaleType="fitCenter"/>
+        app:srcCompat="@drawable/youwin" />
 
-    <Button
-        android:id="@+id/return_init"
+    <TextView
+        android:id="@+id/countdown_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/initactivity"
+        android:layout_marginTop="43dp"
+        android:hint="5"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/end_game_image" />
+        app:layout_constraintTop_toBottomOf="@+id/end_game_image"
+        app:layout_constraintVertical_bias="0.247" />
 </androidx.constraintlayout.widget.ConstraintLayout>
