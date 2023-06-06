@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -25,6 +26,7 @@ import cat.udl.gtidic.course2223.teacher.thehangman.databinding.ActivityGameBind
 import cat.udl.gtidic.course2223.teacher.thehangman.models.Game;
 import cat.udl.gtidic.course2223.teacher.thehangman.R;
 import cat.udl.gtidic.course2223.teacher.thehangman.viewmodels.GameViewModel;
+import cat.udl.gtidic.course2223.teacher.thehangman.views.ResultatActivity;
 
 public class GameActivity extends AppCompatActivity {
 
@@ -130,7 +132,16 @@ public class GameActivity extends AppCompatActivity {
         refreshHangmanImages();
         hideKeyboard();
         checkGameOver();
+
+        // Verificar si el juego ha terminado y mostrar ResultatActivity
+        if (gameViewModel.getGame().isPlayerTheWinner() || gameViewModel.getGame().isGameOver()) {
+            Intent intent = new Intent(this, ResultatActivity.class);
+            intent.putExtra("playerWinner", gameViewModel.getGame().isPlayerTheWinner());
+            startActivity(intent);
+            finish();
+        }
     }
+
 
     /**
      * Revisa si el joc ha acabat i informa via Log (de moment)
