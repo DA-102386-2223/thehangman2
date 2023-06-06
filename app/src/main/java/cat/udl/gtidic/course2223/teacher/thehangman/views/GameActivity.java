@@ -3,9 +3,11 @@ package cat.udl.gtidic.course2223.teacher.thehangman.views;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -54,6 +56,12 @@ public class GameActivity extends AppCompatActivity {
         updateUserName();
 
         setInputLetterAlwaysUppercase();
+        gameViewModel.getLettersChosen().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String string) {
+                lettersChosen.setText(string);
+            }
+        });
     }
 
     @Override
@@ -96,9 +104,9 @@ public class GameActivity extends AppCompatActivity {
     /**
      * Actualitza les letters chosen pel player
      */
-    private void refreshLettersChosen(){
+    /*private void refreshLettersChosen(){
         lettersChosen.setText(gameViewModel.getGame().lettersChosen());
-    }
+    }*/
 
     /**
      * Actualitza les imatges del penjat
@@ -126,7 +134,7 @@ public class GameActivity extends AppCompatActivity {
         }
         Log.d(Game.TAG, "Estat actual: " + gameViewModel.getGame().getCurrentRound());
 
-        refreshLettersChosen();
+        //refreshLettersChosen();
         refreshHangmanImages();
         hideKeyboard();
         checkGameOver();
@@ -149,8 +157,17 @@ public class GameActivity extends AppCompatActivity {
             Log.d(Game.TAG, "El Joc ha acabat");
             btnNewLetter.setEnabled(false);
             etNewLetter.setEnabled(false);
-            finish();
+            sendResult(playerWinner);
         }
+    }
+
+    public void sendResult(Boolean winner){
+        Intent i = new Intent(GameActivity.this, EndGameActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("resultado", winner);
+        i.putExtras(bundle);
+        startActivity(i);
+        finish();
     }
 
     /**
@@ -158,7 +175,7 @@ public class GameActivity extends AppCompatActivity {
      */
     private void startGame(){
         gameViewModel.startGame();
-        refreshLettersChosen();
+        //refreshLettersChosen();
         refreshHangmanImages();
     }
 
