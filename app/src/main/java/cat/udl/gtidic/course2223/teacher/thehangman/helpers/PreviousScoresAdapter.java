@@ -5,10 +5,14 @@
 
 package cat.udl.gtidic.course2223.teacher.thehangman.helpers;
 
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
+
+import cat.udl.gtidic.course2223.teacher.thehangman.R;
 
 public class PreviousScoresAdapter extends RecyclerView.Adapter<PreviousScoresViewHolder> {
 
@@ -21,18 +25,19 @@ public class PreviousScoresAdapter extends RecyclerView.Adapter<PreviousScoresVi
     @NonNull
     @Override
     public PreviousScoresViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Developer despistat: pending to do
-        return null;
+        LayoutInflater li = LayoutInflater.from(parent.getContext());
+        View v = li.inflate(R.layout.previous_score_item, parent, false);
+        return new PreviousScoresViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull PreviousScoresViewHolder holder, int position) {
-        // Developer despistat: pending to do
+        MatchOnline mm = matchesOnlineList.get(position);
+        holder.render(mm);
     }
 
     @Override
     public int getItemCount() {
-        // Developer despistat: pending to do
-        return 0;
+        return matchesOnlineList.size();
     }
 }

@@ -70,4 +70,5 @@ public class LoginActivity extends AppCompatActivity {
         etEmail.setText("");
         etPassowrd.setText("");
     }
+
 }

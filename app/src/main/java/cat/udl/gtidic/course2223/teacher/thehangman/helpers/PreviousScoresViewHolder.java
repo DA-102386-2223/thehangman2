@@ -5,6 +5,7 @@
 
 package cat.udl.gtidic.course2223.teacher.thehangman.helpers;
 
+import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -36,7 +37,7 @@ public class PreviousScoresViewHolder extends RecyclerView.ViewHolder {
     public void render(MatchOnline item){
         tvUserEmailVHValue.setText(item.userEmail);
         tvWonVHValue.setText(item.playerWon.toString());
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
         tvTimeVHValue.setText(dateFormat.format(item.time));
         tvSecretWordVHValue.setText(item.secretWord);
         tvLettersChosenVHValue.setText(item.lettersChosenStr);

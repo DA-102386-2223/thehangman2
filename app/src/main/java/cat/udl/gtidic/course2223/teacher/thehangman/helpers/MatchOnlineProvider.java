@@ -46,6 +46,13 @@ public class MatchOnlineProvider {
         // Developer despistat: PENDING
         // fer la crida a Firebase
         // i a l'onDataChange cridar a updateList(snapshot) que ja tinc implementada
+
+        matchesReference.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                DataSnapshot snapshot = task.getResult();
+                updateList(snapshot);
+            }
+        });
     }
 
     /**
