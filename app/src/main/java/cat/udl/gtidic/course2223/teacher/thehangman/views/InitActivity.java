@@ -5,14 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+
 import cat.udl.gtidic.course2223.teacher.thehangman.R;
 
 public class InitActivity extends AppCompatActivity {
 
+    FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_init);
+        mAuth = FirebaseAuth.getInstance();
         findViewById(R.id.btnStartGame).setOnClickListener(view -> startGame());
         findViewById(R.id.btnPreviousScores).setOnClickListener(view -> showPreviousScores());
         findViewById(R.id.btnHowToPlay).setOnClickListener(view -> howToPlay());
@@ -47,6 +52,8 @@ public class InitActivity extends AppCompatActivity {
      * Deslogueja l'usuari de Firebase
      */
     private void logout() {
-        Toast.makeText(this, R.string.notDeveloped, Toast.LENGTH_SHORT ).show();
+        //Toast.makeText(this, R.string.notDeveloped, Toast.LENGTH_SHORT ).show();
+        mAuth.signOut();
+        finish();
     }
 }
