@@ -26,12 +26,6 @@ public class EndGameActivity extends AppCompatActivity {
         btn.setOnClickListener(v -> {
             finish();
         });
-        new CountDownTimer(5000, 1000) {
-            public void onFinish() {
-                finish();
-            }
-            public void onTick(long millisUntilFinished) {
-            }
-        }.start();
+
     }
 }
