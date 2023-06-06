@@ -41,4 +41,6 @@ In conclusion, Hangman is a captivating word-guessing game that continues to bri
     <string name="secretWord">Secret Word</string>
     <string name="lettersChosen">Letters Chosen</string>
     <string name="TotalRounds">Total Rounds</string>
+    <string name="Resultat_no_obtingut">Resultat no obtingut</string>
+    <string name="TornarMenu">Menu</string>
 </resources>

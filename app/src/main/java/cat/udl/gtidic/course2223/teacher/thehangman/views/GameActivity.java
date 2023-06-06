@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -45,6 +46,8 @@ public class GameActivity extends AppCompatActivity {
         binding.setViewmodel(gameViewModel);
         binding.setLifecycleOwner(this);
 
+
+
         // Initializing views
         btnNewLetter = findViewById(R.id.btnNewLetter);
         btnNewLetter.setOnClickListener(v -> newLetter());
@@ -54,6 +57,7 @@ public class GameActivity extends AppCompatActivity {
         updateUserName();
 
         setInputLetterAlwaysUppercase();
+
     }
 
     @Override
@@ -143,12 +147,15 @@ public class GameActivity extends AppCompatActivity {
         if (gameViewModel.getGame().isPlayerTheWinner()){
             Log.d(Game.TAG, "El jugador ha guanyat!");
             playerWinner = true;
+            jocAcabat(playerWinner);
+            finish();
         }
 
         if (gameViewModel.getGame().isGameOver()){
             Log.d(Game.TAG, "El Joc ha acabat");
             btnNewLetter.setEnabled(false);
             etNewLetter.setEnabled(false);
+            jocAcabat(playerWinner);
             finish();
         }
     }
@@ -186,5 +193,13 @@ public class GameActivity extends AppCompatActivity {
         System.arraycopy(editFilters, 0, newFilters, 0, editFilters.length);
         newFilters[editFilters.length] = new InputFilter.AllCaps();
         etNewLetter.setFilters(newFilters);
+    }
+
+    private void jocAcabat(Boolean isPlayerWinner)
+    {
+        Intent intent =  new Intent(this, EndGameActivity.class);
+        intent.putExtra("isPlayerWinner",isPlayerWinner);
+        startActivity(intent);
+        finish();
     }
 }
