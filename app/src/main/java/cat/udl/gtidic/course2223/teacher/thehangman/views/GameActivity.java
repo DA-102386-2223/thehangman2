@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -54,6 +55,8 @@ public class GameActivity extends AppCompatActivity {
         updateUserName();
 
         setInputLetterAlwaysUppercase();
+
+
     }
 
     @Override
@@ -149,6 +152,10 @@ public class GameActivity extends AppCompatActivity {
             Log.d(Game.TAG, "El Joc ha acabat");
             btnNewLetter.setEnabled(false);
             etNewLetter.setEnabled(false);
+            Intent intent = new Intent(GameActivity.this, EndGameActivity.class);
+            intent.putExtra("playerWinner", playerWinner);
+            startActivity(intent);
+
             finish();
         }
     }
@@ -161,6 +168,9 @@ public class GameActivity extends AppCompatActivity {
         refreshLettersChosen();
         refreshHangmanImages();
     }
+
+
+
 
     /* -------- METODES AUXILIARS --------- */
 
