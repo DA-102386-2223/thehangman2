@@ -40,4 +40,5 @@ En resum, el Penjat és un joc fascinant d\'encertar paraules que continua porta
     <string name="secretWord">Paraula secreta</string>
     <string name="lettersChosen">Lletres triades</string>
     <string name="TotalRounds">Total Rondes</string>
+    <string name="loggedOut">Has tancat sessió amb èxit.</string>
 </resources>
