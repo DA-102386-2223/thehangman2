@@ -3,6 +3,7 @@ package cat.udl.gtidic.course2223.teacher.thehangman.views;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
@@ -55,6 +56,12 @@ public class GameActivity extends AppCompatActivity {
         updateUserName();
 
         setInputLetterAlwaysUppercase();
+        gameViewModel.getLettersChosen().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String string) {
+                lettersChosen.setText(string);
+            }
+        });
     }
 
     @Override
@@ -97,9 +104,9 @@ public class GameActivity extends AppCompatActivity {
     /**
      * Actualitza les letters chosen pel player
      */
-    private void refreshLettersChosen(){
+    /*private void refreshLettersChosen(){
         lettersChosen.setText(gameViewModel.getGame().lettersChosen());
-    }
+    }*/
 
     /**
      * Actualitza les imatges del penjat
@@ -127,7 +134,7 @@ public class GameActivity extends AppCompatActivity {
         }
         Log.d(Game.TAG, "Estat actual: " + gameViewModel.getGame().getCurrentRound());
 
-        refreshLettersChosen();
+        //refreshLettersChosen();
         refreshHangmanImages();
         hideKeyboard();
         checkGameOver();
@@ -168,7 +175,7 @@ public class GameActivity extends AppCompatActivity {
      */
     private void startGame(){
         gameViewModel.startGame();
-        refreshLettersChosen();
+        //refreshLettersChosen();
         refreshHangmanImages();
     }
 

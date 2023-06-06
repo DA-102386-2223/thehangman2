@@ -13,9 +13,14 @@ public class GameViewModel extends ViewModel {
     }
 
     private final MutableLiveData<String> visibleWord = new MutableLiveData<>();
+    private MutableLiveData<String> lettersChosen = new MutableLiveData<>();
 
     public Game getGame() {
         return game;
+    }
+
+    public MutableLiveData<String> getLettersChosen() {
+        return lettersChosen;
     }
 
     Game game;
@@ -23,11 +28,13 @@ public class GameViewModel extends ViewModel {
     public void startGame(){
         game = new Game();
         visibleWord.setValue(game.visibleWord());
+        lettersChosen.setValue(game.lettersChosen());
     }
 
     public int addLetter(String novaLletra) {
         int value = game.addLetter(novaLletra);
         visibleWord.setValue(game.visibleWord());
+        lettersChosen.setValue(game.lettersChosen());
         return value;
     }
 }
