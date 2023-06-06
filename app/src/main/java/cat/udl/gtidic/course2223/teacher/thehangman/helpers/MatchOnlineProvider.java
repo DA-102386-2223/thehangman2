@@ -5,10 +5,15 @@
 
 package cat.udl.gtidic.course2223.teacher.thehangman.helpers;
 
+import android.util.Log;
+
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -46,7 +51,22 @@ public class MatchOnlineProvider {
         // Developer despistat: PENDING
         // fer la crida a Firebase
         // i a l'onDataChange cridar a updateList(snapshot) que ja tinc implementada
-    }
+
+
+            matchesReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    updateList(snapshot);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Log.d(Game.TAG, "EROR OCURRED");
+                }
+            });
+        }
+
+
 
     /**
      * S'encarrega de rebre l'snapshot des del firebase i emplenar i actualitzar la llista de l'adapter
