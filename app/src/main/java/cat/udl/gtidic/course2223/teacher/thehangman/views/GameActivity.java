@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import cat.udl.gtidic.course2223.teacher.thehangman.EndGameActivity;
 import cat.udl.gtidic.course2223.teacher.thehangman.databinding.ActivityGameBinding;
 import cat.udl.gtidic.course2223.teacher.thehangman.models.Game;
 import cat.udl.gtidic.course2223.teacher.thehangman.R;
@@ -149,8 +151,23 @@ public class GameActivity extends AppCompatActivity {
             Log.d(Game.TAG, "El Joc ha acabat");
             btnNewLetter.setEnabled(false);
             etNewLetter.setEnabled(false);
+            if (playerWinner){
+                btnNewLetter.setEnabled(false);
+                etNewLetter.setEnabled(false);
+                Intent intent = new Intent(this, EndGameActivity.class);
+                intent.putExtra("winner", true);
+                startActivity(intent);
+            }
+            if (!playerWinner){
+                btnNewLetter.setEnabled(false);
+                etNewLetter.setEnabled(false);
+                Intent intent = new Intent(this, EndGameActivity.class);
+                intent.putExtra("loser", false);
+                startActivity(intent);
+            }
             finish();
         }
+
     }
 
     /**
