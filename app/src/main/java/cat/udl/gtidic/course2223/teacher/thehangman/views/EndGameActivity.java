@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -31,12 +32,12 @@ public class EndGameActivity extends AppCompatActivity {
             resultat.setText("Has perdut!");
         }
 
-        findViewById(R.id.buttonmenu).setOnClickListener(view -> {
-            Intent intent = new Intent(this,InitActivity.class);
-            startActivity(intent);
-            finish();
-        });
-
-
+        new Handler().postDelayed(() -> returnMenu(), 4000);
+    }
+    private void returnMenu()
+    {
+        Intent intent = new Intent(this,InitActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
