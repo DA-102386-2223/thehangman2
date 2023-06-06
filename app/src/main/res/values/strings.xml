@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">The Hangman</string>
+    <string name="LettersSelected">Letters already selected:</string>
+    <string name="WordToDiscover">Word to discover:</string>
+    <string name="newLetter">New letter</string>
+    <string name="notValidBecauseSize">No letter entered</string>
+    <string name="notValidBecauseAlreadyChoosen">Letter already used</string>
+    <string name="startGame">Start Game</string>
+    <string name="username">Username</string>
+    <string name="previousScores">Previous Scores</string>
+    <string name="Logout">Logout</string>
+    <string name="notDeveloped">Not developed yet!</string>
+    <string name="Login">Login</string>
+    <string name="setEmail">Set your credentials here:</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="howToPlay">How to Play</string>
+    <string name="longDescription">Hangman: An Entertaining Word Guessing Game\n\n
+
+Hangman is a classic word-guessing game that has entertained people of all ages for decades. It is a simple yet engaging game that challenges players to guess a secret word by suggesting letters within a limited number of attempts. The game\'s name, "Hangman," stems from the visual representation of a hanging stick figure, which slowly takes shape as incorrect guesses are made.\n\n
+
+The objective of Hangman is to unravel the mystery word by guessing letters one at a time. The game begins with a blank line for each letter in the word, with the number of blanks indicating the word\'s length. The player then proposes a letter they believe might be part of the word. If the letter is correct, it fills in the corresponding blank spaces. However, if the letter is incorrect, a part of the hangman figure is drawn on the gallows.\n\n
+
+The hangman figure is typically drawn in a step-by-step manner. With each incorrect guess, a new body part of the hangman is added, starting with the head, followed by the body, arms, and legs. The game continues until the player either successfully guesses the word by filling in all the blanks or until the hangman figure is completed, resulting in the player\'s loss.\n\n
+
+Hangman offers an element of suspense and strategic thinking. Players must choose their letters carefully, taking into account the available information and making educated guesses. They can consider word patterns, common letter frequencies, and even rely on their linguistic knowledge to deduce the hidden word.\n\n
+
+To make the game more challenging and exciting, variations of Hangman have emerged over time. Some versions introduce categories, where words are grouped based on themes such as animals, countries, or movies. This adds an additional layer of complexity, requiring players to think within specific domains.\n\n
+
+Hangman is not only a game of skill but also a test of vocabulary and word recognition. It encourages players to expand their knowledge and learn new words as they play. Furthermore, it can be a social activity, as players can take turns guessing letters or play collaboratively to solve the word as a team.\n\n
+
+In the digital age, Hangman has transitioned from pencil and paper to various digital platforms. Mobile apps, websites, and computer programs now offer virtual renditions of the game, complete with visually appealing graphics and immersive sound effects. This has made Hangman even more accessible, allowing players to enjoy it anytime, anywhere.\n\n
+
+Hangman\'s popularity can be attributed to its simplicity and universal appeal. It is a game that transcends language barriers, making it suitable for players around the world. It has become a staple in classrooms, family gatherings, and even as a pastime during long journeys.\n\n
+
+In conclusion, Hangman is a captivating word-guessing game that continues to bring joy to people of all ages. Its blend of suspense, strategy, and vocabulary challenges makes it a timeless classic. Whether played with a pen and paper or on a digital screen, Hangman\'s allure remains strong, providing hours of entertainment and mental stimulation for players worldwide.\n\n
+
+</string>
+    <string name="wonTheGame">Won the game</string>
+    <string name="time">Time</string>
+    <string name="secretWord">Secret Word</string>
+    <string name="lettersChosen">Letters Chosen</string>
+    <string name="TotalRounds">Total Rounds</string>
+</resources>

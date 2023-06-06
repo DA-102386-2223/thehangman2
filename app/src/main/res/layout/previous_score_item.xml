@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="4dp"
+    android:layout_marginVertical="4dp"
+    android:background="#0C000000">
+
+    <TextView
+        android:id="@+id/tvUserEmailVH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/username"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvWonVH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/wonTheGame"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvUserEmailVH"
+        app:layout_constraintTop_toBottomOf="@+id/tvUserEmailVH" />
+
+    <TextView
+        android:id="@+id/tvTimeVH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/time"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvWonVH"
+        app:layout_constraintTop_toBottomOf="@+id/tvWonVH" />
+
+    <TextView
+        android:id="@+id/tvSecretWordVH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/secretWord"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvTimeVH"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimeVH" />
+
+    <TextView
+        android:id="@+id/tvLettersChosenVH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/lettersChosen"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvSecretWordVH"
+        app:layout_constraintTop_toBottomOf="@+id/tvSecretWordVH" />
+
+    <TextView
+        android:id="@+id/tvTotalRoundVH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/tvLettersChosenVH"
+        app:layout_constraintTop_toBottomOf="@+id/tvLettersChosenVH"
+        android:text="@string/TotalRounds" />
+
+    <TextView
+        android:id="@+id/tvUserEmailVHValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tvLettersChosenVHValue"
+        app:layout_constraintTop_toTopOf="@+id/tvUserEmailVH"
+        tools:text="alumne@udl.cat" />
+
+    <TextView
+        android:id="@+id/tvWonVHValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tvLettersChosenVHValue"
+        app:layout_constraintTop_toTopOf="@+id/tvWonVH"
+        tools:text="true" />
+
+    <TextView
+        android:id="@+id/tvTimeVHValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tvLettersChosenVHValue"
+        app:layout_constraintTop_toTopOf="@+id/tvTimeVH"
+        tools:text="06/06/2023 17:00:00" />
+
+    <TextView
+        android:id="@+id/tvSecretWordVHValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tvLettersChosenVHValue"
+        app:layout_constraintTop_toTopOf="@+id/tvSecretWordVH"
+        tools:text="HELLO" />
+
+    <TextView
+        android:id="@+id/tvLettersChosenVHValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toEndOf="@+id/tvLettersChosenVH"
+        app:layout_constraintTop_toTopOf="@+id/tvLettersChosenVH"
+        tools:text="[H, O, L, A]" />
+
+    <TextView
+        android:id="@+id/tvTotalRoundVHValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@+id/tvLettersChosenVHValue"
+        app:layout_constraintTop_toTopOf="@+id/tvTotalRoundVH"
+        tools:text="4" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">El penjat</string>
+    <string name="LettersSelected">lletres ja seleccionades:</string>
+    <string name="WordToDiscover">Lletra a descobrir:</string>
+    <string name="newLetter">Nova lletra</string>
+    <string name="notValidBecauseSize">Lletra no introduida</string>
+    <string name="notValidBecauseAlreadyChoosen">Lletra ja introduida</string>
+    <string name="startGame">Inicia joc</string>
+    <string name="username">Nom usuari</string>
+    <string name="previousScores">Resultats anteriors</string>
+    <string name="Logout">Logout</string>
+    <string name="notDeveloped">No desenvolupat encara!</string>
+    <string name="Login">Login</string>
+    <string name="setEmail">Escriu les teves credencials aquí:</string>
+    <string name="email">email</string>
+    <string name="password">contrasenya</string>
+    <string name="howToPlay">Com jugar</string>
+    <string name="longDescription">Penjat: Un Joc Divertit de D\'Encertar Paraules\n\n
+El Penjat és un joc clàssic d\'encertar paraules que ha entretingut persones de totes les edats durant dècades. És un joc senzill però captivant que desafia els jugadors a endevinar una paraula secreta suggerint lletres en un nombre limitat d\'intents. El nom del joc, "Penjat", prové de la representació visual d\'una figura penjada que pren forma a mesura que es fan encerts incorrectes.\n\n
+
+L\'objectiu del Penjat és desvetllar la paraula misteriosa endevinant lletres una per una. El joc comença amb una línia en blanc per a cada lletra de la paraula, amb el nombre de línies en blanc que indica la longitud de la paraula. Llavors, el jugador proposa una lletra que creu que pot formar part de la paraula. Si la lletra és correcta, omple els espais en blanc corresponents. No obstant això, si la lletra és incorrecta, s\'anirà dibuixant una part de la figura penjada al cadafal.\n\n
+
+La figura penjada es dibuixa típicament pas a pas. Amb cada encert incorrecte, s\'afegeix una nova part del cos de la figura, començant pel cap, seguit del cos, els braços i les cames. El joc continua fins que el jugador encerti la paraula amb l\'ompliment de tots els espais en blanc o fins que s\'acabi de dibuixar la figura penjada, cosa que provoca la derrota del jugador.\n\n
+
+El Penjat ofereix un element de suspens i pensament estratègic. Els jugadors han de triar les seves lletres amb cura, tenint en compte la informació disponible i fent endevinacions educades. Poden considerar els patrons de les paraules, les freqüències de les lletres comunes i fins i tot confiar en el seu coneixement lingüístic per deduir la paraula oculta.\n\n
+
+Per fer el joc més desafiador i emocionant, amb el temps han sorgit diverses variants del Penjat. Algunes versions introdueixen categories, on les paraules es divideixen en temàtiques com animals, països o pel·lícules. Això afegeix un nivell addicional de complexitat, requerint que els jugadors pensin dins de dominis específics.\n\n
+
+El Penjat no és només un joc d\'habilitat sinó també una prova de vocabulari i reconeixement de paraules. Afegeix l\'estímul perquè els jugadors ampliïn el seu coneixement i aprenguin paraules noves mentre juguen. A més, pot ser una activitat social, ja que els jugadors poden anar endevinant lletres per torns o jugar de manera col·laborativa per resoldre la paraula com a equip.\n\n
+
+En l\'era digital, el Penjat ha passat del paper i llapis a diverses plataformes digitals. Les aplicacions mòbils, els llocs web i els programes informàtics ofereixen ara versions virtuals del joc, amb gràfics atractius i efectes de so immersius. Això ha fet que el Penjat sigui encara més accessible, permetent als jugadors gaudir-ne en qualsevol moment i en qualsevol lloc.\n\n
+
+La popularitat del Penjat es deu a la seva simplicitat i atractiu universal. És un joc que supera les barreres lingüístiques, cosa que el fa adequat per als jugadors de tot el món. S\'ha convertit en un clàssic en aules, reunions familiars i fins i tot com a passatemps durant llargs viatges.\n\n
+
+En resum, el Penjat és un joc fascinant d\'encertar paraules que continua portant diversió a persones de totes les edats. La combinació de suspens, estratègia i reptes de vocabulari fa que sigui un clàssic impereceder. Ja sigui jugat amb paper i llapis o en una pantalla digital, l\'atractiu del Penjat roman fort, proporcionant hores d\'entreteniment i estimulació mental als jugadors de tot el món.\n\n
+
+</string>
+    <string name="wonTheGame">Guanyat?</string>
+    <string name="time">Hora</string>
+    <string name="secretWord">Paraula secreta</string>
+    <string name="lettersChosen">Lletres triades</string>
+    <string name="TotalRounds">Total Rondes</string>
+</resources>

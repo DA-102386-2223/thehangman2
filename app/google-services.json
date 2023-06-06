@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "498511169373",
+    "project_id": "dam-parcial2",
+    "storage_bucket": "dam-parcial2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498511169373:android:fe34752f507d88044e0ab4",
+        "android_client_info": {
+          "package_name": "cat.udl.gtidic.course2223.teacher.thehangman"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDT7Egf7m6B6e7T7lgmfOgy6QdeNxmSH8o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
