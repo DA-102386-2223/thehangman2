@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -149,8 +150,17 @@ public class GameActivity extends AppCompatActivity {
             Log.d(Game.TAG, "El Joc ha acabat");
             btnNewLetter.setEnabled(false);
             etNewLetter.setEnabled(false);
-            finish();
+            sendResult(playerWinner);
         }
+    }
+
+    public void sendResult(Boolean winner){
+        Intent i = new Intent(GameActivity.this, EndGameActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("resultado", winner);
+        i.putExtras(bundle);
+        startActivity(i);
+        finish();
     }
 
     /**
