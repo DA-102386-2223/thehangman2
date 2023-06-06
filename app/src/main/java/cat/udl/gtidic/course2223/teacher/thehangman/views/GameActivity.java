@@ -3,6 +3,7 @@ package cat.udl.gtidic.course2223.teacher.thehangman.views;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
@@ -22,6 +23,8 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.List;
+
 import cat.udl.gtidic.course2223.teacher.thehangman.databinding.ActivityGameBinding;
 import cat.udl.gtidic.course2223.teacher.thehangman.models.Game;
 import cat.udl.gtidic.course2223.teacher.thehangman.R;
@@ -30,7 +33,7 @@ import cat.udl.gtidic.course2223.teacher.thehangman.viewmodels.GameViewModel;
 public class GameActivity extends AppCompatActivity {
 
     Button btnNewLetter;
-    TextView lettersChosen;
+    TextView tvlettersChosen;
     EditText etNewLetter;
     ImageView ivState;
     private GameViewModel gameViewModel;
@@ -49,10 +52,12 @@ public class GameActivity extends AppCompatActivity {
         // Initializing views
         btnNewLetter = findViewById(R.id.btnNewLetter);
         btnNewLetter.setOnClickListener(v -> newLetter());
-        lettersChosen = findViewById(R.id.tvLettersChosen);
+        tvlettersChosen = findViewById(R.id.tvLettersChosen);
         etNewLetter = findViewById(R.id.etNewLetter);
         ivState = findViewById(R.id.ivState);
         updateUserName();
+
+
 
         setInputLetterAlwaysUppercase();
     }
@@ -98,7 +103,16 @@ public class GameActivity extends AppCompatActivity {
      * Actualitza les letters chosen pel player
      */
     private void refreshLettersChosen(){
-        lettersChosen.setText(gameViewModel.getGame().lettersChosen());
+        gameViewModel.getLettersChosen().observe(this, new Observer<List<String>>() {
+            @Override
+            public void onChanged(List<String> lettersChosen) {
+                StringBuilder builder = new StringBuilder();
+                for (String letter : lettersChosen) {
+                    builder.append(letter).append(", ");
+                }
+                tvlettersChosen.setText(builder.toString());
+            }
+        });
     }
 
     /**
@@ -115,6 +129,7 @@ public class GameActivity extends AppCompatActivity {
         String novaLletra = etNewLetter.getText().toString().toUpperCase();
         etNewLetter.setText("");
 
+        gameViewModel.addLetterChosen(novaLletra);
         int validLetter = gameViewModel.addLetter(novaLletra);
         if (validLetter != Game.LETTER_VALIDATION_OK){
             Log.d(Game.TAG, "Lletra no vàlida");
