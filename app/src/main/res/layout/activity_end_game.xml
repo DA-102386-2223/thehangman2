@@ -10,20 +10,11 @@
         android:id="@+id/resultat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
         android:text="@string/Resultat_no_obtingut"
         android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/buttonmenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:text="@string/TornarMenu"
-        app:layout_constraintEnd_toEndOf="@+id/resultat"
-        app:layout_constraintStart_toStartOf="@+id/resultat"
-        app:layout_constraintTop_toBottomOf="@+id/resultat" />
 </androidx.constraintlayout.widget.ConstraintLayout>
