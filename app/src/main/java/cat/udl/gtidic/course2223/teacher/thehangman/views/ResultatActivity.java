@@ -32,15 +32,15 @@ public class ResultatActivity extends AppCompatActivity {
             tvResultMessage.setText("¡Has perdut!");
         }
 
-        Button btnBackToInit = findViewById(R.id.btnBackToInit);
-        btnBackToInit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ResultatActivity.this, InitActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+        //Button btnBackToInit = findViewById(R.id.btnBackToInit);
+        //btnBackToInit.setOnClickListener(new View.OnClickListener() {
+        // @Override
+          //  public void onClick(View v) {
+            //    Intent intent = new Intent(ResultatActivity.this, InitActivity.class);
+              //  startActivity(intent);
+                //finish();
+          //  }
+        //});
 
         // Iniciar el temporitzador
         countDownTimer = new CountDownTimer(WAIT_TIME, 1000) {
