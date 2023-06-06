@@ -4,9 +4,27 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cat.udl.gtidic.course2223.teacher.thehangman.models.Game;
 
 public class GameViewModel extends ViewModel {
+    private MutableLiveData<List<String>> lettersChosen = new MutableLiveData<>();
+
+    public LiveData<List<String>> getLettersChosen() {
+        return lettersChosen;
+    }
+
+    public void addLetterChosen(String letter) {
+        List<String> currentList = lettersChosen.getValue();
+        if (currentList == null) {
+            currentList = new ArrayList<>();
+        }
+        currentList.add(letter);
+        lettersChosen.setValue(currentList);
+    }
+
 
     public LiveData<String> getVisibleWord() {
         return visibleWord;
@@ -30,4 +48,6 @@ public class GameViewModel extends ViewModel {
         visibleWord.setValue(game.visibleWord());
         return value;
     }
+
+
 }
