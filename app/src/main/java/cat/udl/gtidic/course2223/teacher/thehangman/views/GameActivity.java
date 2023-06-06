@@ -147,16 +147,17 @@ public class GameActivity extends AppCompatActivity {
         if (gameViewModel.getGame().isPlayerTheWinner()){
             Log.d(Game.TAG, "El jugador ha guanyat!");
             playerWinner = true;
+            jocAcabat(playerWinner);
+            finish();
         }
 
         if (gameViewModel.getGame().isGameOver()){
             Log.d(Game.TAG, "El Joc ha acabat");
             btnNewLetter.setEnabled(false);
             etNewLetter.setEnabled(false);
+            jocAcabat(playerWinner);
             finish();
         }
-
-        jocAcabat(playerWinner);
     }
 
     /**
