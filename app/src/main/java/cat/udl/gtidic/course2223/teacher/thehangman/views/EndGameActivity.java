@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.TextView;
 
 import cat.udl.gtidic.course2223.teacher.thehangman.R;
@@ -25,7 +26,14 @@ public class EndGameActivity extends AppCompatActivity {
             res = getString(R.string.youLost);
         }
         tv.setText(res);
-        findViewById(R.id.btnReturnToInitActivity).setOnClickListener(view -> returnToInit());
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                returnToInit();
+            }
+        }, 5000);
     }
 
     private void returnToInit() {
