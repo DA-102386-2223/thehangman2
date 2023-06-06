@@ -81,7 +81,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:textSize="24sp"
-            tools:text="B, A, E, P"
+            tools:text="@{viewmodel.getGame().lettersChosen()}"
             app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
             app:layout_constraintTop_toBottomOf="@+id/tvLettersChosenText" />

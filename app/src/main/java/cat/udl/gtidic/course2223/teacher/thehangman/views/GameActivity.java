@@ -172,6 +172,10 @@ public class GameActivity extends AppCompatActivity {
 
 
 
+
+
+
+
     /* -------- METODES AUXILIARS --------- */
 
     /**
