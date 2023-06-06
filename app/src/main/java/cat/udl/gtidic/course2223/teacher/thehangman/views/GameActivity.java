@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.InputFilter;
@@ -150,7 +151,9 @@ public class GameActivity extends AppCompatActivity {
             btnNewLetter.setEnabled(false);
             etNewLetter.setEnabled(false);
             finish();
-        }
+            Intent i = new Intent(this, EndGameActivity.class);
+            i.putExtra("gameWin", playerWinner);
+            startActivity(i);}
     }
 
     /**
