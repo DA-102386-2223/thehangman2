@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.InitActivity">
-
+    tools:context=".views.InitActivity"
+    tools:ignore="ExtraText">
     <Button
         android:id="@+id/btnStartGame"
         android:layout_width="0dp"
@@ -60,10 +60,22 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
+    <ImageView
+        android:layout_width="254dp"
+        android:layout_height="262dp"
+        android:layout_gravity="center"
+        android:src="@drawable/hangman"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineInitHorizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
