@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
+import com.google.firebase.auth.FirebaseAuth;
 import cat.udl.gtidic.course2223.teacher.thehangman.R;
 
 public class InitActivity extends AppCompatActivity {
@@ -48,5 +49,7 @@ public class InitActivity extends AppCompatActivity {
      */
     private void logout() {
         Toast.makeText(this, R.string.notDeveloped, Toast.LENGTH_SHORT ).show();
+        FirebaseAuth.getInstance().signOut();
+        finish();
     }
 }

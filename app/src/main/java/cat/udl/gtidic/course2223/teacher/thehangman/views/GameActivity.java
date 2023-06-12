@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.util.Log;
@@ -22,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import cat.udl.gtidic.course2223.teacher.thehangman.databinding.ActivityGameBinding;
+import cat.udl.gtidic.course2223.teacher.thehangman.EndGameActivity;
 import cat.udl.gtidic.course2223.teacher.thehangman.models.Game;
 import cat.udl.gtidic.course2223.teacher.thehangman.R;
 import cat.udl.gtidic.course2223.teacher.thehangman.viewmodels.GameViewModel;
@@ -54,6 +56,8 @@ public class GameActivity extends AppCompatActivity {
         updateUserName();
 
         setInputLetterAlwaysUppercase();
+        gameViewModel.getLettersChosenLD().observe(this, this::refreshLettersChosen);
+
     }
 
     @Override
@@ -96,8 +100,9 @@ public class GameActivity extends AppCompatActivity {
     /**
      * Actualitza les letters chosen pel player
      */
-    private void refreshLettersChosen(){
-        lettersChosen.setText(gameViewModel.getGame().lettersChosen());
+
+        private void refreshLettersChosen(String s){
+            lettersChosen.setText(s);
     }
 
     /**
@@ -126,7 +131,7 @@ public class GameActivity extends AppCompatActivity {
         }
         Log.d(Game.TAG, "Estat actual: " + gameViewModel.getGame().getCurrentRound());
 
-        refreshLettersChosen();
+        refreshLettersChosen("");
         refreshHangmanImages();
         hideKeyboard();
         checkGameOver();
@@ -150,6 +155,9 @@ public class GameActivity extends AppCompatActivity {
             btnNewLetter.setEnabled(false);
             etNewLetter.setEnabled(false);
             finish();
+            Intent intent = new Intent(this, EndGameActivity.class);
+            intent.putExtra("isPlayerWinner", playerWinner);
+            startActivity(intent);
         }
     }
 
@@ -158,7 +166,7 @@ public class GameActivity extends AppCompatActivity {
      */
     private void startGame(){
         gameViewModel.startGame();
-        refreshLettersChosen();
+        refreshLettersChosen("");
         refreshHangmanImages();
     }
 

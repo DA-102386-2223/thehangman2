@@ -66,4 +66,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="262dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnStartGame"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hangman"
+        tools:layout_editor_absoluteX="104dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
